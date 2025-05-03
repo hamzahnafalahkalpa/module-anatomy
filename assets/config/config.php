@@ -7,18 +7,23 @@ use Hanafalah\ModuleAnatomy\{
 };
 
 return [
-    'contracts'    => [
-        'anatomy'        => Contracts\Anatomy::class,
-        'module_anatomy' => Contracts\ModuleAnatomy::class
-    ],
-    'examinations' => [
-        'Anatomy' => [
-            'schema' => Schemas\Anatomy::class
+    'namespace' => 'Hanafalah\\ModuleAnatomy',
+    'app' => [
+        'contracts' => [
+            //ADD YOUR CONTRACTS HERE
         ]
+    ],
+    'libs' => [
+        'model' => 'Models',
+        'contract' => 'Contracts',
+        'schema' => 'Schemas',
+        'database' => 'Database',
+        'data' => 'Data',
+        'resource' => 'Resources',
+        'migration' => '../assets/database/migrations'
     ],
     'database' => [
         'models' => [
-            'Anatomy' => Models\Anatomy::class
         ]
     ]
 ];

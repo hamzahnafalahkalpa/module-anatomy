@@ -18,14 +18,14 @@ class Anatomy extends BaseModel
         'props'
     ];
 
-    public function toViewApi()
+    public function getViewResource()
     {
-        return new ViewAnatomy($this);
+        return ViewAnatomy::class;
     }
 
-    public function toShowApi()
+    public function getShowResource()
     {
-        return new ViewAnatomy($this);
+        return ViewAnatomy::class;
     }
 
     public function form()

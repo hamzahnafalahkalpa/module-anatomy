@@ -10,7 +10,7 @@ use Hanafalah\ModuleAnatomy\Contracts;
 
 use Hanafalah\LaravelSupport\Supports\PackageManagement;
 
-class Anatomy extends PackageManagement implements Contracts\Anatomy
+class Anatomy extends PackageManagement implements Contracts\Schemas\Anatomy
 {
     protected string $__entity = 'Anatomy';
     public static $anatomy_model;

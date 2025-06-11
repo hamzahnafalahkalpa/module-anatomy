@@ -1,6 +1,6 @@
 <?php
 
-namespace Hanafalah\ModuleAnatomy\Contracts;
+namespace Hanafalah\ModuleAnatomy\Contracts\Schemas;
 
 use Hanafalah\LaravelSupport\Contracts\Supports\DataManagement;
 

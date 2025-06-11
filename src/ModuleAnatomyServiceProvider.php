@@ -16,25 +16,19 @@ class ModuleAnatomyServiceProvider extends BaseServiceProvider
         $this->registerMainClass(ModuleAnatomy::class)
             ->registerCommandService(Providers\CommandServiceProvider::class)
             ->registers([
-                '*',
-                'Services'  => function () {
-                    $this->binds([
-                        Contracts\ModuleAnatomy::class => ModuleAnatomy::class,
-                        Contracts\Anatomy::class       => Schemas\Anatomy::class
-                    ]);
-                }
+                '*'
             ]);
-        $this->setupExaminationLists();
+        // $this->setupExaminationLists();
     }
 
-    private function setupExaminationLists(): self
-    {
-        $examination_lists = config('database.examinations', []);
-        $lists = config('module-anatomy.examinations', []);
-        $examination_lists = array_merge($examination_lists, $lists);
-        config(['database.examinations' => $examination_lists]);
-        return $this;
-    }
+    // private function setupExaminationLists(): self
+    // {
+    //     $examination_lists = config('database.examinations', []);
+    //     $lists = config('module-anatomy.examinations', []);
+    //     $examination_lists = array_merge($examination_lists, $lists);
+    //     config(['database.examinations' => $examination_lists]);
+    //     return $this;
+    // }
 
     protected function dir(): string
     {

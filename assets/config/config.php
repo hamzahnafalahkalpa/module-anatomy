@@ -3,13 +3,15 @@
 use Hanafalah\ModuleAnatomy\{
     Models,
     Schemas,
-    Contracts
+    Contracts,
+    Commands
 };
 
 return [
-    'contracts'    => [
-        'anatomy'        => Contracts\Anatomy::class,
-        'module_anatomy' => Contracts\ModuleAnatomy::class
+    'namespace' => 'Hanafalah\ModuleAnatomy',
+    'app' => [
+        'contracts'    => [
+        ],
     ],
     'examinations' => [
         'Anatomy' => [
@@ -18,11 +20,18 @@ return [
     ],
     'libs' => [
         'model' => 'Models',
-        'contract' => 'Contracts'
+        'contract' => 'Contracts',
+        'schema' => 'Schemas',
+        'database' => 'Database',
+        'data' => 'Data',
+        'resource' => 'Resources',
+        'migration' => '../assets/database/migrations',
     ],
     'database' => [
         'models' => [
-            'Anatomy' => Models\Anatomy::class
         ]
-    ]
+    ],
+    'commands'  => [
+        Commands\InstallMakeCommand::class
+    ],
 ];

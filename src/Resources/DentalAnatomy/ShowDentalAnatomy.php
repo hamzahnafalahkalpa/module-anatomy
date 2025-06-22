@@ -1,10 +1,8 @@
 <?php
 
-namespace Hanafalah\ModuleAnatomy\Resources\Anatomy;
+namespace Hanafalah\ModuleAnatomy\Resources\DentalAnatomy;
 
-use Hanafalah\LaravelSupport\Resources\Unicode\ViewUnicode;
-
-class ViewAnatomy extends ViewUnicode
+class ShowDentalAnatomy extends ViewDentalAnatomy
 {
   /**
    * Transform the resource into an array.

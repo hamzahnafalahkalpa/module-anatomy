@@ -1,10 +1,10 @@
 <?php
 
-namespace Hanafalah\ModuleAnatomy\Resources\Anatomy;
+namespace Hanafalah\ModuleAnatomy\Resources\DentalAnatomy;
 
-use Hanafalah\LaravelSupport\Resources\Unicode\ViewUnicode;
+use Hanafalah\LaravelSupport\Resources\ApiResource;
 
-class ViewAnatomy extends ViewUnicode
+class ViewDentalAnatomy extends ApiResource
 {
   /**
    * Transform the resource into an array.
@@ -14,8 +14,7 @@ class ViewAnatomy extends ViewUnicode
    */
   public function toArray(\Illuminate\Http\Request $request): array
   {
-    $arr = [];
-    $arr = $this->mergeArray(parent::toArray($request),$arr);
+    $arr = parent::toArray($request);
     return $arr;
   }
 }

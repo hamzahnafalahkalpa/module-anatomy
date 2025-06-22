@@ -22,25 +22,39 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         $table_name = $this->__table->getTable();
         if (!$this->isTableExists()) {
             Schema::create($table_name, function (Blueprint $table) {
-                $table->id();
-                $table->string('name')->nullable(false);
-                $table->string('morph', 100)->nullable(false)->default('');
+                $table->ulid('id')->primary();
+                $table->string('flag',100)->nullable(false);
+                $table->string('label',100)->nullable(true);
+                $table->string('name', 100)->nullable(false);
+                $table->string('status', 100)->nullable(true);
+                $table->unsignedInteger('ordering')->nullable();
                 $table->json('props')->nullable();
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->index(["flag"], "ex_st_flag");
+                $table->index(['flag','label'], "ex_st_lbl_flag");
+            });
+
+            Schema::table($table_name, function (Blueprint $table) {
+                $table->foreignIdFor($this->__table, 'parent_id')
+                    ->nullable()->after($this->__table->getKeyName())
+                    ->index()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             });
         }
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists($this->__table->getTable());
     }

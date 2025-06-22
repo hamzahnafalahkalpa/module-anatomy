@@ -2,9 +2,9 @@
 
 namespace Hanafalah\ModuleAnatomy\Resources\Anatomy;
 
-use Hanafalah\LaravelSupport\Resources\Unicode\ViewUnicode;
+use Hanafalah\LaravelSupport\Resources\Unicode\ShowUnicode;
 
-class ViewAnatomy extends ViewUnicode
+class ShowAnatomy extends ViewAnatomy
 {
   /**
    * Transform the resource into an array.
@@ -15,7 +15,8 @@ class ViewAnatomy extends ViewUnicode
   public function toArray(\Illuminate\Http\Request $request): array
   {
     $arr = [];
-    $arr = $this->mergeArray(parent::toArray($request),$arr);
+    $show = $this->resolveNow(new ShowUnicode($this));
+    $arr = $this->mergeArray(parent::toArray($request),$show,$arr);
     return $arr;
   }
 }

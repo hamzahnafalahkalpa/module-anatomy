@@ -2,13 +2,12 @@
 
 namespace Hanafalah\ModuleAnatomy\Models;
 
-use Hanafalah\LaravelSupport\Models\Unicode\Unicode;
-use Hanafalah\ModuleAnatomy\Resources\Anatomy\{
-    ViewAnatomy,
-    ShowAnatomy
+use Hanafalah\ModuleAnatomy\Resources\DentalAnatomy\{
+    ViewDentalAnatomy,
+    ShowDentalAnatomy
 };
 
-class Anatomy extends Unicode
+class DentalAnatomy extends Anatomy
 {
     protected $table = 'anatomies';
     
@@ -21,11 +20,10 @@ class Anatomy extends Unicode
     }
 
     public function getViewResource(){
-        return ViewAnatomy::class;
+        return ViewDentalAnatomy::class;
     }
 
     public function getShowResource(){
-        return ShowAnatomy::class;
+        return ShowDentalAnatomy::class;
     }
-    
 }

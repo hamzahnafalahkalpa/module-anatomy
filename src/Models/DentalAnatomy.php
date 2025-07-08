@@ -9,16 +9,8 @@ use Hanafalah\ModuleAnatomy\Resources\DentalAnatomy\{
 
 class DentalAnatomy extends Anatomy
 {
-    protected $table = 'anatomies';
+    protected $table = 'unicodes';
     
-    public function viewUsingRelation(): array{
-        return [];
-    }
-
-    public function showUsingRelation(): array{
-        return [];
-    }
-
     public function getViewResource(){
         return ViewDentalAnatomy::class;
     }

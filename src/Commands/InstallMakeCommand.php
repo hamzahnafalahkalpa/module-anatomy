@@ -31,9 +31,6 @@ class InstallMakeCommand extends EnvironmentCommand
             '--tag'      => 'migrations'
         ]);
         $this->info('✔️  Created migrations');
-
-        $migrations = $this->setMigrationBasePath(database_path('migrations'))->canMigrate();
-
         $this->comment('hanafalah/module-anatomy installed successfully.');
     }
 }

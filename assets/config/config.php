@@ -8,14 +8,10 @@ use Hanafalah\ModuleAnatomy\{
 };
 
 return [
-    'namespace' => 'Hanafalah\ModuleAnatomy',
+    'namespace' => 'Hanafalah\\ModuleAnatomy',
     'app' => [
-        'contracts'    => [
-        ],
-    ],
-    'examinations' => [
-        'Anatomy' => [
-            'schema' => Schemas\Anatomy::class
+        'contracts' => [
+            //ADD YOUR CONTRACTS HERE
         ]
     ],
     'libs' => [
@@ -25,7 +21,7 @@ return [
         'database' => 'Database',
         'data' => 'Data',
         'resource' => 'Resources',
-        'migration' => '../assets/database/migrations',
+        'migration' => '../assets/database/migrations'
     ],
     'database' => [
         'models' => [

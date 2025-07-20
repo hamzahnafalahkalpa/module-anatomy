@@ -11,7 +11,7 @@ use Hanafalah\ModuleAnatomy\Contracts\Data\AnatomyData;
 class Anatomy extends Unicode implements ContractsAnatomy
 {
     protected string $__entity = 'Anatomy';
-    public static $anatomy_model;
+    public $anatomy_model;
     //protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [
@@ -24,7 +24,7 @@ class Anatomy extends Unicode implements ContractsAnatomy
 
     public function prepareStoreAnatomy(AnatomyData $anatomy_dto): Model{
         $anatomy = $this->prepareStoreUnicode($anatomy_dto);
-        return static::$anatomy_model = $anatomy;
+        return $this->anatomy_model = $anatomy;
     }
 
     public function anatomy(mixed $conditionals = null): Builder{

@@ -7,7 +7,7 @@ use Hanafalah\ModuleAnatomy\Contracts\Schemas\DentalAnatomy as ContractsDentalAn
 class DentalAnatomy extends Anatomy implements ContractsDentalAnatomy
 {
     protected string $__entity = 'DentalAnatomy';
-    public static $dental_anatomy_model;
+    public $dental_anatomy_model;
     //protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [

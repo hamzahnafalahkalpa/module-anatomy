@@ -3,7 +3,7 @@
 return [
     [
         "name" => "Kepala",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Kepala",
         "childs" => [
             [
@@ -17,7 +17,7 @@ return [
     ],
     [
         "name" => "Leher",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Leher",
         "childs" => [
             [ "name" => "Tenggorokan", "flag" => "ThroatAnatomy", "label" => "Tenggorokan", "childs" => [] ],
@@ -27,7 +27,7 @@ return [
     ],
     [
         "name" => "Dada",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Dada",
         "childs" => [
             [ "name" => "Paru-paru", "flag" => "LungsAnatomy", "label" => "Paru-paru", "childs" => [] ],
@@ -55,7 +55,7 @@ return [
     ],
     [
         "name" => "Abdomen",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Perut",
         "childs" => [
             [ "name" => "Lambung", "flag" => "StomachAnatomy", "label" => "Lambung", "childs" => [] ],
@@ -67,7 +67,7 @@ return [
     ],
     [
         "name" => "Panggul",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Panggul",
         "childs" => [
             [ "name" => "Kandung Kemih", "flag" => "BladderAnatomy", "label" => "Kandung Kemih", "childs" => [] ],
@@ -77,7 +77,7 @@ return [
     ],
     [
         "name" => "Ekstremitas Atas",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Ekstremitas Atas",
         "childs" => [
             [ "name" => "Bahu", "flag" => "ShouldersAnatomy", "label" => "Bahu", "childs" => [] ],
@@ -91,7 +91,7 @@ return [
     ],
     [
         "name" => "Ekstremitas Bawah",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Ekstremitas Bawah",
         "childs" => [
             [ "name" => "Panggul", "flag" => "HipsAnatomy", "label" => "Panggul", "childs" => [] ],
@@ -105,7 +105,7 @@ return [
     ],
     [
         "name" => "Punggung",
-        "flag" => "HeadtoToe",
+        "flag" => "HeadToToe",
         "label" => "Punggung",
         "childs" => [
             [ "name" => "Punggung Atas", "flag" => "UpperBack", "label" => "Punggung Atas", "childs" => [] ],

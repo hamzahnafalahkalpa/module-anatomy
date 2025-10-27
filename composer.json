@@ -11,13 +11,6 @@
             "Hanafalah\\ModuleAnatomy\\": "src/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Hanafalah\\ModuleAnatomy\\ModuleAnatomyServiceProvider"
-            ]
-        }
-    },
     "authors": [
         {
             "name": "Hamzah Nur Al Falah",

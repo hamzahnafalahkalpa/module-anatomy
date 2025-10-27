@@ -12,6 +12,12 @@ class Anatomy extends Unicode
 {
     protected $table = 'unicodes';
     
+    protected static function booted(): void{
+        parent::booted();
+        static::addGlobalScope('flag',function($query){
+        });
+    }
+
     public function viewUsingRelation():array {
         if (isset(request()->is_flatten) && request()->is_flatten){
             $relation = ['reference'];

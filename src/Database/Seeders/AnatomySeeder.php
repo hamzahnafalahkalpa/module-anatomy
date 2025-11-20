@@ -3,6 +3,7 @@
 namespace Hanafalah\ModuleAnatomy\Database\Seeders;
 
 use Hanafalah\LaravelSupport\Concerns\Support\HasRequestData;
+use Hanafalah\ModuleAnatomy\Schemas\Anatomy;
 use Illuminate\Database\Seeder;
 
 class AnatomySeeder extends Seeder{
@@ -17,11 +18,11 @@ class AnatomySeeder extends Seeder{
         foreach ($anatomies as $anatomy) {
             $contract = config('app.contracts.'.$anatomy['flag']);
             $flag = $anatomy['flag'];
-            if (!class_exists($contract)) {
+            if (!app($contract) instanceof Anatomy) {
                 $contract = config('app.contracts.Anatomy');
                 $flag = 'Anatomy';
             }
-            $model = app($contract)->{'prepareStore'.$flag}($this->requestDTO(config('app.contracts.'.$flag.'Data'), $anatomy));
+            app($contract)->{'prepareStore'.$flag}($this->requestDTO(config('app.contracts.'.$flag.'Data'), $anatomy));
         }
     }
 }

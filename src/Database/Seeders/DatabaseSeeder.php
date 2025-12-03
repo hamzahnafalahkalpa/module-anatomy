@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        echo "[DEBUG] Booting ".class_basename($this)."\n";
         $this->call([
             AnatomySeeder::class
         ]);

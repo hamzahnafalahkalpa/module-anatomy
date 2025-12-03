@@ -11,7 +11,6 @@ class AnatomySeeder extends Seeder{
     protected $__anatomy_model;
 
     public function run(){
-        echo "[DEBUG] Booting ".class_basename($this)."\n";
         $this->__anatomy_model = app(config('database.models.Anatomy'));
 
         $anatomies = include __DIR__.'/data/head-to-toe.php';

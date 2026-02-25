@@ -2,12 +2,16 @@
 
 namespace Hanafalah\ModuleAnatomy\Schemas;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Hanafalah\ModuleAnatomy\Contracts\Data\DentalAnatomyData;
 use Hanafalah\ModuleAnatomy\Contracts\Schemas\DentalAnatomy as ContractsDentalAnatomy;
 
 class DentalAnatomy extends Anatomy implements ContractsDentalAnatomy
 {
     protected string $__entity = 'DentalAnatomy';
     public $dental_anatomy_model;
+    protected bool $__is_parent_only = false;
     //protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [
@@ -17,4 +21,13 @@ class DentalAnatomy extends Anatomy implements ContractsDentalAnatomy
             'duration' => 24 * 60
         ]
     ];
+
+    public function prepareStoreDentalAnatomy(DentalAnatomyData $dental_anatomy_dto): Model{
+        $dental_anatomy = $this->prepareStoreAnatomy($dental_anatomy_dto);
+        return $this->dental_anatomy_model = $dental_anatomy;
+    }
+
+    public function dentalAnatomy(mixed $conditionals = null): Builder{
+        return $this->anatomy($conditionals);
+    }
 }
